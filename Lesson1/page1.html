@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script>
+        let div1;
+        let fontSize;
+        function init(){
+        div1=document.getElementById('div1');
+        fontSize=18;
+        updateDiv1FontSize();
+        }
+        function updateDiv1(text){
+            div1.innerHTML=text;
+        }
+        function updateDiv1FontSize(){
+            div1.style.fontSize=fontSize+"px";
+        }
+        function clickA(){
+            updateDiv1("A");
+            div1.style.color="red";
+            if(fontSize>12){
+            fontSize--;
+            updateDiv1FontSize();
+            }
+            
+
+        }
+        function clickB(){
+            updateDiv1("B");
+            if(fontSize<20){
+            fontSize++;
+            updateDiv1FontSize();
+            }
+
+        }
+
+
+    </script>
+</head>
+<body onload="init()">
+    <p><button onclick="clickA()">A</button></p>
+    <p><button onclick="clickB()">B</button></p>
+
+    <div id="div1">my div.</div>
+    
+</body>
+</html>

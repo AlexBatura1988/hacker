@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        let div1;
+        let num1,num2;
+        function init(){
+            div1=document.getElementById("div1");
+            num1=0;
+            num2=1;
+            div1.innerHTML=num2;
+        }
+        function BtnNext(){
+            let nextNumber=num1+num2;
+            num1=num2;
+            num2=nextNumber; 
+            div1.innerHTML=num2;
+
+        }
+
+        function fib(n){
+            
+        }
+    </script>
+</head>
+<body onload="init()">
+    <button onclick="BtnNext()">next</button>
+    <div id="div1"></div>
+    
+</body>
+</html>
