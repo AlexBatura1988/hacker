@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<script>
+	
+		function init(){
+			document.getElementById('txtUsername').focus();
+		}
+		function btnMaxClicked(){
+			let num1 = document.getElementById('txtNum1').value;
+			let num2 = document.getElementById('txtNum2').value;
+			
+			if(num1 === '' || num2 === ''){
+				alert('must enter both num1 and num2!');
+				return;
+			}
+			num1 = parseInt(num1);
+			num2 = parseInt(num2);
+			lblResult.innerHTML = num1 > num2 ? num1 : num2;
+			
+		}
+		
+		function txtUsernameKeyPressed(event){
+			//console.log(event.keyCode);
+			if(event.keyCode === 13)
+				document.getElementById('txtPassword').focus();
+		}
+		
+		function txtPasswordKeyPressed(event){
+			if(event.keyCode === 13)
+				btnLoginClicked();
+		
+		}
+		
+		function btnLoginClicked(){
+			document.getElementById('lblLoginResult').innerHTML = "please wait...";
+		
+		}
+		
+		
+	</script>
+</head>
+
+<body onload="init()">
+<p>num1: <input type="number" id="txtNum1" /></p>
+<p>num2: <input type="number" id="txtNum2" /></p>
+<p><button onclick="btnMaxClicked()">max</button><span id="lblResult"></span></p>
+<hr/>
+<p>username: <input id="txtUsername" type="text" onkeypress="txtUsernameKeyPressed(event)" /></p>
+<p>password: <input id="txtPassword" type="text" onkeypress="txtPasswordKeyPressed(event)" /></p>
+<p><button onclick="btnLoginClicked()">login</button><span id="lblLoginResult"></span></p>
+</body>
+</html>
