@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        let div1;
+        let name;
+        function onClick(){
+            div1=document.getElementById("div1");
+            name=document.getElementById("txtName").value;
+            div1.innerHTML=name;
+
+
+        }
+    </script>
+</head>
+<body>
+    <p>Hhat is your name <input id="txtName" type="text" /></p>
+    <button onclick="onClick()">click</button>
+    <div id="div1"></div>
+
+    
+</body>
+</html>
