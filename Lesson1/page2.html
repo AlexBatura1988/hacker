@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function init(){
+            div=document.getElementById("div");
+            div.innerHTML=max(10,5);
+            div1=document.getElementById("div1");
+            div1.innerHTML=fib(8);
+
+        }
+        function max(a,b){
+            return a>b? a:b;
+        }
+        function fib(n){
+            if(n==1 || n==2)
+            return 1;
+            return fib(n-1)+fib(n-2);
+        }
+    </script>
+</head>
+<body onload="init()">
+    
+    <div id="div"></div>
+    <div1 id="div1"></div1>
+</body>
+</html>
