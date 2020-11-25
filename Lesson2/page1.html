@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script>
+        let num1=0;
+        let num2=0;
+        let res=0;
+        let isFirst=true;   
+        let div1;
+        let div2;
+        let div3;
+        function init(){
+            div1=document.getElementById("div1");
+            div2=document.getElementById("div2");
+            div3=document.getElementById("div3");
+            div1.innerHTML=num1;
+            div2.innerHTML=num2;
+            div3.innerHTML=res;
+           
+            
+        }
+        function btnDigitClick(digit){
+            if(isFirst)
+            num1=num1*10+digit;
+            else
+            num2=num2*10+digit;
+            div1.innerHTML=num1;
+            div2.innerHTML=num2;
+        }
+        function btnPlusClicked(){
+            isFirst=false;
+            
+        }
+        function btnResult(num1,num2){
+            res=num1+num2;
+            div3.innerHTML=res;
+        }
+         
+    </script>
+
+</head>
+<body onload="init()" >
+    <button  onclick="btnDigitClick(0)">0</button>
+    <button  onclick="btnDigitClick(1)">1</button>
+    <button  onclick="btnDigitClick(2)">2</button>
+    <button  onclick="btnDigitClick(3)">3</button>
+    <button  onclick="btnDigitClick(4)">4</button>
+    <button  onclick="btnDigitClick(5)">5</button>
+    <button  onclick="btnDigitClick(6)">6</button>
+    <button  onclick="btnDigitClick(7)">7</button>
+    <button  onclick="btnDigitClick(8)">8</button>
+    <button  onclick="btnDigitClick(9)">9</button>
+    <button onclick="btnPlusClicked()">+</button>
+    <button onclick="btnResult(num1,num2)">=</button>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+
+    
+</body>
+</html>
